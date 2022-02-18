@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-app';
+  title = 'Hello Angular 10';
+  hero = 'BillyBob';
+  onLike() {
+    window.alert(`I like ${this.hero}`);
+    this.hero = 'Boothstomper';
+  }
 }
