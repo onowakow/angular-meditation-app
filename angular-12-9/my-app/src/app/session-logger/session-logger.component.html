@@ -1,0 +1,62 @@
+<div *ngIf="!sessionForm" class="container">
+  <button (click)="createNewSession()" mat-flat-button color="primary">
+    Log Meditation
+  </button>
+</div>
+
+<div *ngIf="sessionForm" class="formContainer">
+  <form id="sessionForm" [formGroup]="sessionForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill" class="formInputField">
+      <mat-label> Date </mat-label>
+      <input matInput [matDatepicker]="datePicker" formControlName="date" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="datePicker">
+      </mat-datepicker-toggle>
+      <mat-datepicker #datePicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="formInputField">
+      <mat-label> Minutes </mat-label>
+      <input
+        name="minutes"
+        matInput
+        class="form-control"
+        type="number"
+        min="0"
+        formControlName="minutes"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="formInputField">
+      <mat-label> Notes </mat-label>
+      <textarea
+        name="notes"
+        matInput
+        class="form-control"
+        type="text"
+        formControlName="notes"
+      >
+      </textarea>
+    </mat-form-field>
+    <div class="buttonContainer">
+      <button
+        type="button"
+        (click)="cancelNewSession()"
+        style="flex: 1; margin-right: 0.5rem"
+        mat-flat-button
+        color="basic"
+      >
+        Cancel
+      </button>
+      <button
+        type="submit"
+        [disabled]="!sessionForm.valid"
+        style="flex: 1"
+        mat-flat-button
+        color="primary"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

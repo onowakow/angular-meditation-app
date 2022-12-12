@@ -1,0 +1,26 @@
+.formContainer {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+#sessionForm {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  padding: 1rem;
+  background-color: white;
+}
+
+.formInputField {
+  margin-bottom: 1rem;
+}
+
+.container {
+  margin: 1rem
+}
+
+.buttonContainer {
+  display: flex;
+}
